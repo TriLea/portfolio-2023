@@ -43,11 +43,11 @@
 
 /* my code */
 
-@keyframes spin {
+/* @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
 #peppermint-icon {
   animation: spin 2s linear infinite;
-}
+} */

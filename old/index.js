@@ -12,7 +12,7 @@ function init() {
     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
 
     // Initialize the WebGL renderer with alpha for transparent background
-    renderer = new THREE.WebGLRenderer({alpha: true});
+    renderer = new THREE.WebGLRenderer({ alpha: true });
 
     // Set the renderer size to be full window
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -39,7 +39,7 @@ function init() {
 
     // Add event listeners for window resize and scroll events
     window.addEventListener('resize', onWindowResize, false);
-    window.addEventListener('scroll', onScroll, false); 
+    window.addEventListener('scroll', onScroll, false);
 
     // Start the animation loop
     animate();
@@ -73,11 +73,11 @@ function onScroll() {
 
     // Rotate the dodecahedron based on scroll position.
     // Here, a full scroll would rotate the dodecahedron 360 degrees (2 * PI radians) in both x and y axes.
-    dodecahedron.rotation.x = scrollPosition * 2 * Math.PI; 
-    dodecahedron.rotation.y = scrollPosition * 2 * Math.PI; 
+    dodecahedron.rotation.x = scrollPosition * 2 * Math.PI;
+    dodecahedron.rotation.y = scrollPosition * 2 * Math.PI;
 
     // Adjust the size and projection if the window has been resized during the scroll
-    onWindowResize(); 
+    onWindowResize();
 }
 
 // Invoke the 'init' function to kick things off
