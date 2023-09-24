@@ -1,10 +1,34 @@
 import '../assets/styles/App.css';
 import MyScene from '../components/MyScene.jsx';
+import '../assets/styles/MyScene.css';
+import { Parallax } from 'react-scroll-parallax';
+import React, { useState, useEffect } from 'react';
 
 function Home() {
+
+    const [scrollY, setScrollY] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollY(window.scrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const parallaxShift = scrollY * 0.5;
+
   return (
     <>
-      <MyScene />
+    <div style={{ transform: `translateY(${parallaxShift}px)` }}>
+        <MyScene id="cube"/>
+    </div>
+      {/* <Parallax y={[50, -50]}>
+          <MyScene id="cube"/>
+      </Parallax> */}
         
       <div id="about-card">
           <h2>About Me</h2>

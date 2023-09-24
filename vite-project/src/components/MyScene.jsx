@@ -33,6 +33,10 @@ function MyScene() {
             const geometry = new THREE.IcosahedronGeometry(2);
             const material = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true });
             dodecahedron = new THREE.Mesh(geometry, material);
+
+            // changing the size of the dodecahedron? iconhedron?
+            dodecahedron.scale.set(0.5, 0.5, 0.5);
+
             scene.add(dodecahedron);
             
             // Setting the camera's position.
@@ -97,4 +101,5 @@ function MyScene() {
     return <div ref={cubeRef}></div>;
 }
 
-export default MyScene;
+// export default MyScene;
+export default React.memo(MyScene);
