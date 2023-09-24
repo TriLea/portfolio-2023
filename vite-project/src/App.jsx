@@ -1,32 +1,35 @@
-import './App.css'
-import MyScene from './MyScene.jsx';
+import './assets/styles/App.css';
+//using react-router-dom to display different components
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
+//components
+import Home from './Pages/Home.jsx';
+import Nav from './components/Nav.jsx';
+// import Header from './components/Header';
+// import Footer from './components/Footer';
+//pages
+// import Portfolio from './Pages/ProjectItem';
+// import Resume from './Pages/Resume';
+// import AboutMe from './Pages/AboutMe';
+// import Contact from './Pages/Contact';
+
+
+
+export default function App() {
   return (
-    <>
-      <MyScene />
-        
-      <div id="about-card">
-          <h2>About Me</h2>
-          <p>Hello, I'm Tristan Lea</p>
-      </div>
-
-      <div id="projects-card">
-          <h2>Projects</h2>
-          <p>Here are some of my projects</p>
-      </div>
-
-      <div id="resume-card">
-          <h2>Resume</h2>
-          <p>Here is my resume</p>
-      </div>
-
-      <div id="contact-card">
-          <h2>Contact</h2>
-          <p>Tlea5@uw.edu</p>
-      </div>
-    </>
-  )
+    <div className="App">
+      <Router>
+        {/* <Header /> */}
+        <Nav /> 
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/Nav" element={<Nav />} />
+            {/* <Route exact path="/Portfolio" element={<Portfolio />} />
+            <Route exact path="/Contact" element={<Contact />} />
+            <Route exact path="/Resume" element={<Resume />} /> */}
+          </Routes>
+        {/* <Footer /> */}
+      </Router>
+    </div>
+  );
 }
-
-export default App

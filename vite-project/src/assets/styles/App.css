@@ -1,0 +1,33 @@
+#root {
+  /* Setting a maximum width for the element. */
+  /* max-width: 1280px; */
+  /* Centering the element horizontally within its parent. */
+  margin: 0 auto;
+  /* Adding space on all sides (top, right, bottom, left) of the element. */
+  padding: 2rem;
+  /* Center-aligning the text within the element. */
+  text-align: center;
+}
+
+/* Keyframes for a spinning animation. */
+@keyframes logo-spin {
+  /* Starting state: the logo is not rotated. */
+  from {
+    transform: rotate(0deg);
+  }
+  /* Ending state: the logo completes a full 360-degree rotation. */
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* my code */
+
+/* @keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#peppermint-icon {
+  animation: spin 2s linear infinite;
+} */

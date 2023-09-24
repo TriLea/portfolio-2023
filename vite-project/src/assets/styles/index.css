@@ -1,0 +1,89 @@
+:root {
+  /* Font settings, with fallbacks from specific to more general. */
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Sets the color schemes the browser should support (light and dark). */
+  color-scheme: light dark;
+  /* Default text color. */
+  color: rgba(255, 255, 255, 0.87);
+  /* Default background color. */
+  background-color: #242424;
+
+  /* Prevents the browser from synthesizing bold or oblique font faces. */
+  font-synthesis: none;
+  /* Optimizes text rendering for legibility over speed and geometric precision. */
+  text-rendering: optimizeLegibility;
+  /* Smooths font on the level of the pixel, as opposed to the subpixel. */
+  -webkit-font-smoothing: antialiased;
+  /* Improves text contrast on macOS. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Prevents web browsers from adjusting the font size. */
+  -webkit-text-size-adjust: 100%;
+}
+/* Styling for anchor (link) elements. */
+a {
+  font-weight: 500;
+  color: #646cff;
+  /* Inherits the text decoration from its parent. */
+  text-decoration: inherit;
+}
+/* Hover state styling for anchor (link) elements. */
+a:hover {
+  color: #535bf2;
+}
+/* Styling for the body element of the webpage. */
+body {
+  margin: 0;
+  /* Flexbox properties to center content. */
+  display: flex;
+  place-items: center;
+  /* Ensures a minimum width and height for the body. */
+  min-width: 320px;
+  min-height: 100vh;
+}
+/* Styling for h1 (first-level heading) elements. */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+/* Styling for button elements. */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  /* Inherits the font family from its parent element. */
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+/* Hover state styling for button elements. */
+button:hover {
+  border-color: #646cff;
+}
+/* Focus styling for button elements. */
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Media query to handle light color scheme preference. */
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Overriding the default text and background colors for light mode. */
+    color: #213547;
+    background-color: #ffffff;
+  }
+  /* Hover state styling for anchor (link) elements in light mode. */
+  a:hover {
+    color: #747bff;
+  }
+  /* Background color for button elements in light mode. */
+  button {
+    background-color: #f9f9f9;
+  }
+}
