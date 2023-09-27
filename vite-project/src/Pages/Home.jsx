@@ -23,7 +23,7 @@ function Home() {
 
   return (
     <>
-    <div style={{ transform: `translateY(${parallaxShift}px)` }}>
+    <div style={{transform: `translateY(${parallaxShift}px)` }}>
         <MyScene id="cube"/>
     </div>
       {/* <Parallax y={[50, -50]}>

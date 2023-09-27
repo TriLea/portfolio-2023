@@ -2,9 +2,9 @@
   /* Setting a maximum width for the element. */
   /* max-width: 1280px; */
   /* Centering the element horizontally within its parent. */
-  margin: 0 auto;
+  margin: 0;
   /* Adding space on all sides (top, right, bottom, left) of the element. */
-  padding: 2rem;
+  padding: 0;
   /* Center-aligning the text within the element. */
   text-align: center;
 }

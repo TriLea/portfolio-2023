@@ -12,7 +12,7 @@ function MyScene() {
     // Using the useEffect hook to set up and tear down our Three.js scene.
     useEffect(() => {
         // Declaring our scene, camera, renderer, and dodecahedron objects.
-        let scene, camera, renderer, dodecahedron;
+        let scene, camera, renderer, icosahedrons = [];
 
         function init() {
             console.log("Initialization started");
@@ -30,15 +30,29 @@ function MyScene() {
             renderer.setSize(window.innerWidth, window.innerHeight);
 
             // Creating a wireframe icosahedron and adding it to the scene.
-            const geometry = new THREE.IcosahedronGeometry(2);
+            // const geometry = new THREE.IcosahedronGeometry(2);
+            // const material = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true });
+            // dodecahedron = new THREE.Mesh(geometry, material);
+
+            // Creating a grid of wireframe icosahedrons.
+            const geometry = new THREE.IcosahedronGeometry(0.5);
             const material = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true });
-            dodecahedron = new THREE.Mesh(geometry, material);
+            // Grid dimensions
+            const grid = {x:5, y:5};
+
+            for(let i = 0; i < grid.x; i++) {
+                for(let j = 0; j < grid.y; j++) {
+                    let icosahedron = new THREE.Mesh(geometry, material);
+                    icosahedron.position.set(i-(grid.x/2), j-(grid.y/2), 0);
+                    icosahedrons.push(icosahedron);
+                    scene.add(icosahedron);
+                }
+            }
 
             // changing the size of the dodecahedron? iconhedron?
-            dodecahedron.scale.set(0.5, 0.5, 0.5);
+            // dodecahedron.scale.set(0.5, 0.5, 0.5);
+            // scene.add(dodecahedron);
 
-            scene.add(dodecahedron);
-            
             // Setting the camera's position.
             camera.position.z = 5;
 
@@ -56,6 +70,10 @@ function MyScene() {
             // Requesting the next frame and rendering the scene.
             requestAnimationFrame(animate);
             renderer.render(scene, camera);
+            icosahedrons.forEach(icosahedron => {
+                icosahedron.rotation.x += 0.01;
+                icosahedron.rotation.y += 0.01;
+            });
         }
 
         function onWindowResize() {
