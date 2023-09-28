@@ -71,8 +71,8 @@ function MyScene() {
             requestAnimationFrame(animate);
             renderer.render(scene, camera);
             icosahedrons.forEach(icosahedron => {
-                icosahedron.rotation.x += 0.01;
-                icosahedron.rotation.y += 0.01;
+                icosahedron.rotation.x += 0.004;
+                icosahedron.rotation.y += 0.004;
             });
         }
 
