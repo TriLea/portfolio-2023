@@ -7,7 +7,7 @@ function MyScene() {
     console.log("MyScene component is being rendered");
 
     // A reference to the DOM element where our Three.js scene will be attached.
-    const cubeRef = useRef(null);
+    const cubeRef = useRef([]);
 
     // Using the useEffect hook to set up and tear down our Three.js scene.
     useEffect(() => {
@@ -35,7 +35,7 @@ function MyScene() {
             // dodecahedron = new THREE.Mesh(geometry, material);
 
             // Creating a grid of wireframe icosahedrons.
-            const geometry = new THREE.IcosahedronGeometry(0.5);
+            const geometry = new THREE.IcosahedronGeometry(0.25);
             const material = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true });
             // Grid dimensions
             const grid = {x:5, y:5};
@@ -88,8 +88,13 @@ function MyScene() {
         function onScroll() {
             // Rotating the dodecahedron based on the scroll position.
             const scrollPosition = window.scrollY / document.body.offsetHeight;
-            dodecahedron.rotation.x = scrollPosition * 2 * Math.PI;
-            dodecahedron.rotation.y = scrollPosition * 2 * Math.PI;
+            icosahedron.rotation.x = scrollPosition * 2 * Math.PI;
+            icosahedron.rotation.y = scrollPosition * 2 * Math.PI;
+
+            // icosahedrons.current.forEach(icosahedron => {
+            //     icosahedron.rotation.x = scrollPosition * 2 * Math.PI;
+            //     icosahedron.rotation.y = scrollPosition * 2 * Math.PI;
+            // });
 
             // Adjusting camera and renderer on scroll.
             onWindowResize();
@@ -103,6 +108,7 @@ function MyScene() {
         // Appending the renderer's DOM element to the referenced div.
         if (cubeRef.current && renderer) {
             cubeRef.current.appendChild(renderer.domElement);
+            renderer.setSize(cubeRef.current.clientWidth, cubeRef.current.clientHeight);  // Set renderer size manually
         }
 
         // Cleanup function for removing event listeners and the renderer's DOM element.

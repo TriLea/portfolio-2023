@@ -12,9 +12,9 @@ export default function Nav() {
     <div className="navbar">
       <ul className='Links'>
         <Link to="/"> Home </Link>
-        {/* <Link to="/Contact"> Contact </Link>
         <Link to="/Portfolio"> Portfolio </Link>
-        <Link to="/Resume"> Resume </Link> */}
+        {/* <Link to="/Resume"> Resume </Link> */}
+        {/* <Link to="/Contact"> Contact </Link> */}
       </ul>
     </div>
   );

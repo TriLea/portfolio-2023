@@ -19,36 +19,39 @@ function Home() {
         };
     }, []);
 
-    const parallaxShift = scrollY * 0.5;
+    const parallaxShift = scrollY * 0.4;
 
   return (
     <>
     <div style={{transform: `translateY(${parallaxShift}px)` }}>
-        <MyScene id="cube"/>
+        <MyScene id="cube" className='my-scene'/>
     </div>
+    <div></div>
       {/* <Parallax y={[50, -50]}>
           <MyScene id="cube"/>
       </Parallax> */}
         
-      <div id="about-card">
+      <div className='card'>
           <h2>About Me</h2>
-          <p>Hello, I'm Tristan Lea</p>
+          <p>Hello, I'm Tristan Lea, welcome to my website</p>
+          <p>Above are links to my resume, portfolio, and contact details</p>
+          <p>I look forward to working with you</p>
       </div>
 
-      <div id="projects-card">
+      {/* <div id="projects-card">
           <h2>Projects</h2>
           <p>Here are some of my projects</p>
-      </div>
+      </div> */}
 
-      <div id="resume-card">
+      {/* <div id="resume-card">
           <h2>Resume</h2>
           <p>Here is my resume</p>
-      </div>
+      </div> */}
 
-      <div id="contact-card">
+      {/* <div id="contact-card">
           <h2>Contact</h2>
           <p>Tlea5@uw.edu</p>
-      </div>
+      </div> */}
     </>
   )
 }

@@ -1,11 +1,21 @@
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
-    height: 200%; /* allows scrolling */
+    height: 200%;
+    /* allows scrolling */
     background-color: #000000;
     overflow-x: hidden;
     position: relative;
 }
+
+/* .my-scene {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
+
 
 /* #cube {
     width: 100%;
@@ -16,14 +26,15 @@ body, html {
     z-index: -10;
 } */
 
-#about-card {
+.card {
     position: relative;
     /* z-index: 10; */
     width: 70%;
     padding: 20px;
     background-color: #ffffff;
     color: #000000;
-    margin: 100px auto 0; /* vertical scrolling */
+    margin: 100px auto 0;
+    /* vertical scrolling */
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
