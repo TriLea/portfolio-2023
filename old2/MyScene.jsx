@@ -24,10 +24,14 @@ function MyScene() {
                 return; 
             }
 
+            renderer.domElement.style.position = 'absolute';  // or 'fixed' depending on your needs
+            renderer.domElement.style.zIndex = '-1';
+            console.log("Z-index set:", renderer.domElement.style.zIndex);
+        
             // Setting up the scene and camera.
             scene = new THREE.Scene();
             camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setSize(cubeRef.current.clientWidth, cubeRef.current.clientHeight);
 
             // Creating a wireframe icosahedron and adding it to the scene.
             // const geometry = new THREE.IcosahedronGeometry(2);
