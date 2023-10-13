@@ -1,11 +1,12 @@
-import { OrbitControls } from "@react-three/drei";
-import Ferro from "./Ferro";
+import { OrbitControls, Sphere } from "@react-three/drei";
+import Orb from "./Orb.jsx";
 
 export const Experience = () => {
+
   return (
     <>
       <OrbitControls />
-      <Ferro />
+      <Orb />
       <ambientLight intensity={1} />
       <mesh>
         <boxGeometry />
