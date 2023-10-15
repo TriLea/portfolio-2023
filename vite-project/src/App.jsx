@@ -6,13 +6,15 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import Projects from './Projects';
 // import Contact from './Contact';
 // import Resume from './Resume';
+import NavBar from './components/NavBar.jsx';
 
 function App() {
   return (
     <Router>
+      <NavBar />
       <Routes> 
-        {/* <Route path="/home" element={<Home />} /> 
-        <Route path="/projects" element={<Projects />} /> 
+        {/* <Route path="/" Component={Experience} />  */}
+        {/* <Route path="/projects" element={<Projects />} /> 
         <Route path="/contact" element={<Contact />} /> 
         <Route path="/resume" element={<Resume />} />  */}
 
