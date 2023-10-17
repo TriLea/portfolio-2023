@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import Home from './Home'; 
 import Portfolio from './Pages/Portfolio.jsx'; 
 import Contact from './Pages/Contact.jsx';
-// import Resume from './Resume';
+import Resume from './Pages/Resume.jsx';
 import NavBar from './components/NavBar.jsx';
 
 function App() {
@@ -20,10 +20,8 @@ function App() {
           </Canvas>
         } />
         <Route path="/Portfolio" element={<Portfolio />} />
-        <Route path="/contact" element={<Contact />} />
-        {/* <Route path="/projects" element={<Projects />} /> 
-        <Route path="/contact" element={<Contact />} /> 
-        <Route path="/resume" element={<Resume />} />  */}
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/Resume" element={<Resume />} />
       </Routes>
     </Router>
   );
