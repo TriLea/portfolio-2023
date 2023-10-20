@@ -14,7 +14,7 @@ function App() {
       <NavBar />
       <Routes> 
         <Route path="/" element={
-          <Canvas shadows camera={{ position: [3, 3, 3], fov: 30 }}>
+          <Canvas shadows camera={{ position: [3, 3, 3], fov: 35 }}>
             <color attach="background" args={["#ececec"]} />
             <Experience />
           </Canvas>

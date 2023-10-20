@@ -1,9 +1,9 @@
 import React from 'react';
-import '../styles/Resume.css'; // for the styles
+import '../styles/Resume.css';
 
-const ResumePage = () => {
+const Resume = () => {
   const downloadResume = () => {
-    window.location.href = "/path/to/your/resume.png"; // Modify with the correct path to your resume.png
+    window.location.href = "/path/to/your/resume.png";
   };
 
   return (
@@ -14,4 +14,4 @@ const ResumePage = () => {
   );
 }
 
-export default ResumePage;
+export default Resume;

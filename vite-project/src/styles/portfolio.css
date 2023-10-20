@@ -53,3 +53,18 @@
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 } */
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* By default it will have 5 columns */
+    gap: 20px;  /* This will create space between grid items */
+    padding: 20px;  /* Optional padding around the entire grid */
+}
+
+/* Adjusting the grid for smaller screens */
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);  /* On smaller screens it will have 2 columns */
+    }
+}
+
