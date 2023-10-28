@@ -31,7 +31,7 @@
     display: block;
     text-align: center;
     padding: 10px 0;
-    background-color: #0366d6;
+    background-color: black;
     color: white;
     text-decoration: none;
     margin-top: 10px;
@@ -39,7 +39,7 @@
 }
 
 .project-link:hover {
-    background-color: #0055b8;
+    background-color: black;
 }
 
 /* .project-screenshot {

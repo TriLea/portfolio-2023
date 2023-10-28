@@ -1,52 +1,31 @@
+import React, { useEffect, useState } from 'react';
 import '../styles/Portfolio.css';
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from 'react-router-dom';
+import axios from 'axios';
+// import { fetchGitHubRepos } from '../utils/githubAPI.js';
+import fetchGitHubRepos from '../utils/githubAPI.js';
 
 export default function Portfolio() {
+    const [repos, setRepos] = useState([]);
+
+    useEffect(() => {
+        // Replace 'your-github-username' with your actual GitHub username
+        fetchGitHubRepos('your-github-username').then((data) => {
+            setRepos(data);
+        });
+    }, []);
 
     return (
         <div className="projects-container">
-            <div className="project-card">
-                {/* <img src="repo-image.jpg" alt="Repository Image" class="project-image"> */}
-                <h3 class="project-title">Repository Name</h3>
-                <p class="project-description">Brief description about the repository.</p>
-                <a href="github-repo-link" target="_blank" class="project-link">View on GitHub</a>
-            </div>
-            <div className="project-card">
-                {/* <img src="repo-image.jpg" alt="Repository Image" class="project-image"> */}
-                <h3 class="project-title">Repository Name</h3>
-                <p class="project-description">Brief description about the repository.</p>
-                <a href="github-repo-link" target="_blank" class="project-link">View on GitHub</a>
-            </div>
-            <div className="project-card">
-                {/* <img src="repo-image.jpg" alt="Repository Image" class="project-image"> */}
-                <h3 class="project-title">Repository Name</h3>
-                <p class="project-description">Brief description about the repository.</p>
-                <a href="github-repo-link" target="_blank" class="project-link">View on GitHub</a>
-            </div>
-            <div className="project-card">
-                {/* <img src="repo-image.jpg" alt="Repository Image" class="project-image"> */}
-                <h3 class="project-title">Repository Name</h3>
-                <p class="project-description">Brief description about the repository.</p>
-                <a href="github-repo-link" target="_blank" class="project-link">View on GitHub</a>
-            </div>
-            <div className="project-card">
-                {/* <img src="repo-image.jpg" alt="Repository Image" class="project-image"> */}
-                <h3 class="project-title">Repository Name</h3>
-                <p class="project-description">Brief description about the repository.</p>
-                <a href="github-repo-link" target="_blank" class="project-link">View on GitHub</a>
-            </div>
-            <div className="project-card">
-                {/* <img src="repo-image.jpg" alt="Repository Image" class="project-image"> */}
-                <h3 class="project-title">Repository Name</h3>
-                <p class="project-description">Brief description about the repository.</p>
-                <a href="github-repo-link" target="_blank" class="project-link">View on GitHub</a>
-            </div>
-            <div className="project-card">
-                {/* <img src="repo-image.jpg" alt="Repository Image" class="project-image"> */}
-                <h3 class="project-title">Repository Name</h3>
-                <p class="project-description">Brief description about the repository.</p>
-                <a href="github-repo-link" target="_blank" class="project-link">View on GitHub</a>
-            </div>
+            {repos.map((repo) => (
+                <div className="project-card" key={repo.id}>
+                    <h3 className="project-title">{repo.name}</h3>
+                    <p className="project-description">{repo.description}</p>
+                    <a href={repo.html_url} target="_blank" className="project-link">
+                        View on GitHub
+                    </a>
+                </div>
+            ))}
         </div>
     );
 }
