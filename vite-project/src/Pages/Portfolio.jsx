@@ -9,8 +9,7 @@ export default function Portfolio() {
     const [repos, setRepos] = useState([]);
 
     useEffect(() => {
-        // Replace 'your-github-username' with your actual GitHub username
-        fetchGitHubRepos('your-github-username').then((data) => {
+        fetchGitHubRepos('TriLea').then((data) => {
             setRepos(data);
         });
     }, []);
