@@ -1,24 +1,27 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import { useFrame } from '@react-three/fiber';
+import { useFrame, useThree } from '@react-three/fiber';
+import '../styles/Orb.css';
 
 export default function Orb(props) {
   const meshRef = useRef();
   const wireframeRef = useRef();
   const cameraRef = useRef();
 
-  useEffect(() => {
-    if (meshRef.current && wireframeRef.current && cameraRef.current) {
-      meshRef.current.scale.set(1, 1, 1);
+  const { size } = useThree();
 
-      // Adjust camera position, field of view, and aspect ratio
-      cameraRef.current.position.set(0, 0, 10); // Increase z to zoom out
-      cameraRef.current.aspect = window.innerWidth / window.innerHeight;
+  useEffect(() => {
+    if (meshRef.current) {
+      meshRef.current.scale.set(1, 1, 1);
+    }
+
+    if (cameraRef.current) {
+      cameraRef.current.position.set(0, 0, 10);
+      cameraRef.current.aspect = size.width / size.height;
       cameraRef.current.updateProjectionMatrix();
     }
-  }, []);
+  }, [size.width, size.height]);
 
-  // This hook creates an animation loop
   useFrame(() => {
     if (meshRef.current && wireframeRef.current) {
       const deltaRotation = 0.01;
@@ -29,7 +32,14 @@ export default function Orb(props) {
 
   return (
     <group {...props} dispose={null}>
-      <perspectiveCamera ref={cameraRef} fov={75} aspect={window.innerWidth / window.innerHeight} near={0.1} far={1000} position={[0, 0, 10]} />
+      <perspectiveCamera
+        ref={cameraRef}
+        fov={75}
+        aspect={size.width / size.height}
+        near={0.1}
+        far={1000}
+        position={[0, 0, 10]}
+      />
 
       <mesh
         ref={meshRef}

@@ -4,6 +4,7 @@
     overflow: hidden;
     transition: transform 0.3s;
     margin: 20px;
+    box-sizing: border-box; /* Ensures padding and border are included in total width and height */
 }
 
 .project-card:hover {
@@ -42,29 +43,38 @@
     background-color: black;
 }
 
-/* .project-screenshot {
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project-screenshot:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-} */
-
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);  /* By default it will have 5 columns */
-    gap: 20px;  /* This will create space between grid items */
-    padding: 20px;  /* Optional padding around the entire grid */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    padding: 20px; 
 }
 
-/* Adjusting the grid for smaller screens */
+/* Adjusting the grid for tablets */
 @media (max-width: 768px) {
     .projects-container {
-        grid-template-columns: repeat(2, 1fr);  /* On smaller screens it will have 2 columns */
+        grid-template-columns: repeat(2, 1fr); 
     }
 }
 
+/* Adjusting the grid and font sizes for mobile */
+@media (max-width: 480px) {
+    .projects-container {
+        grid-template-columns: 1fr; 
+        padding: 10px;
+    }
+
+    .project-card {
+        margin: 10px;
+    }
+
+    .project-title {
+        font-size: 18px;
+        margin: 12px;
+    }
+
+    .project-description {
+        margin: 12px;
+        font-size: 14px;
+    }
+}

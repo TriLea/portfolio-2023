@@ -15,6 +15,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-width: 300px;
 }
 
 .brand, nav a {
@@ -26,4 +27,14 @@ body {
 
 nav a:hover {
     color: #ddd;
+}
+
+@media (max-width: 400px) {
+    .container {
+        width: 95%;
+    }
+    .brand, nav a {
+        font-size: 12px;
+        margin-left: 10px;
+    }
 }
