@@ -5,21 +5,17 @@ export default async function fetchGitHubRepos(username) {
         const repoResponse = await axios.get(`https://api.github.com/users/${username}/repos`);
         const repos = repoResponse.data;
 
-        // Fetch and parse README.md for each repository
-        const repoDetails = await Promise.all(repos.map(async (repo) => {
-            try {
-                const readmeResponse = await axios.get(`https://raw.githubusercontent.com/${username}/${repo.name}/master/README.md`);
-                const readmeContent = readmeResponse.data;
+        // Manually define a mapping between repository names and image URLs
+        const repoImages = {
+            'repository-name-1': 'url-to-image-1',
+            'repository-name-2': 'url-to-image-2',
+            // Add more repository-image mappings as needed
+        };
 
-                // Extract the first image URL from the README.md content
-                const imageUrl = readmeContent.match(/\!\[.*\]\((.*)\)/)?.[1];
-
-                return { ...repo, imageUrl };
-            } catch (error) {
-                console.error(`Error fetching README for ${repo.name}:`, error);
-                return { ...repo, imageUrl: null };
-            }
-        }));
+        // Add imageUrl property to each repository based on the mapping
+        const repoDetails = repos.map(repo => {
+            return { ...repo, imageUrl: repoImages[repo.name] || null };
+        });
 
         return repoDetails;
     } catch (error) {
@@ -27,3 +23,4 @@ export default async function fetchGitHubRepos(username) {
         return [];
     }
 }
+
