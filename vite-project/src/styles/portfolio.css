@@ -1,3 +1,7 @@
+.projects-container {
+    background-color: pink; /* New background color */
+}
+
 .project-card {
     border: 1px solid #e1e4e8;
     border-radius: 8px;

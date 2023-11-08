@@ -1,4 +1,5 @@
 import axios from 'axios';
+import image1 from '../assets/T_logo.png';
 
 export default async function fetchGitHubRepos(username) {
     try {
@@ -7,7 +8,7 @@ export default async function fetchGitHubRepos(username) {
 
         // Manually define a mapping between repository names and image URLs
         const repoImages = {
-            'repository-name-1': 'url-to-image-1',
+            'aDailyPlanner': image1,
             'repository-name-2': 'url-to-image-2',
             // Add more repository-image mappings as needed
         };
