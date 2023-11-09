@@ -10,7 +10,6 @@ export default async function fetchGitHubRepos(username) {
         const repoImages = {
             'aDailyPlanner': image1,
             'repository-name-2': 'url-to-image-2',
-            // Add more repository-image mappings as needed
         };
 
         // Add imageUrl property to each repository based on the mapping

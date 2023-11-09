@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import '../styles/Portfolio.css';
 import { Link, useLocation } from 'react-router-dom';
 import axios from 'axios';
-// import { fetchGitHubRepos } from '../utils/githubAPI.js';
 import fetchGitHubRepos from '../utils/githubAPI.js';
 
 export default function Portfolio() {

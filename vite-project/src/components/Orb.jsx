@@ -4,6 +4,7 @@ import { useFrame, useThree } from '@react-three/fiber';
 import '../styles/Orb.css';
 
 export default function Orb(props) {
+
   const meshRef = useRef();
   const wireframeRef = useRef();
   const cameraRef = useRef();

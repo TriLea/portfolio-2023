@@ -1,42 +1,36 @@
 .resume-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px;
-    background-color: #ECECEC;
-    height: 100vh;
-    justify-content: center;
-  }
-  
-  .resume-image {
-    max-width: 80%;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  
-  .download-btn {
-    background-color: black; /* Green */
-    border: none;
-    color: white;
-    padding: 12px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-  }
-  
-  .download-btn:hover {
-    background-color: black;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background-color: #ECECEC;
+  height: calc(100vh - 100px); 
+  box-sizing: border-box;
+}
+.resume-image {
+  max-width: 100%;
+  max-height: calc(100vh - 100px - 48px);
+  object-fit: contain;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  margin: auto;
+}
 
-  .resume-image {
-    width: 100%;
-    height: 500px;
-  }
-  
-  
+.download-btn {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+  background-color: black;
+}
