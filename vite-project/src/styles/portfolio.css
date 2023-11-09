@@ -1,6 +1,11 @@
 .projects-container {
-    background-color: pink; 
+    /* background-color: pink;  */
 }
+
+.overflow-auto {
+    overflow: auto;
+}
+
 
 .project-card {
     border: 1px solid #e1e4e8;
@@ -8,7 +13,7 @@
     overflow: hidden;
     transition: transform 0.3s;
     margin: 20px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 .project-card:hover {
@@ -19,8 +24,8 @@
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-top-left-radius: 8px; 
-    border-top-right-radius: 8px; 
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .project-title {
@@ -51,22 +56,22 @@
 
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; 
-    padding: 20px; 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
 }
 
 /* Adjusting the grid for tablets */
 @media (max-width: 768px) {
     .projects-container {
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 /* Adjusting the grid and font sizes for mobile */
 @media (max-width: 480px) {
     .projects-container {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
         padding: 10px;
     }
 

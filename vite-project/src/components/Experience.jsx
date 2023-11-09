@@ -1,4 +1,4 @@
-import { OrbitControls, Sphere } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import Orb from "./Orb.jsx";
 
 export const Experience = () => {
@@ -9,7 +9,7 @@ export const Experience = () => {
       <Orb />
       <ambientLight intensity={1} />
       <mesh>
-        <boxGeometry />
+        <icosahedronGeometry />
         <meshNormalMaterial />
       </mesh>
     </>

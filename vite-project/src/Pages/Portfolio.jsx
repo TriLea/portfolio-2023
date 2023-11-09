@@ -8,9 +8,16 @@ export default function Portfolio() {
     const [repos, setRepos] = useState([]);
 
     useEffect(() => {
+        document.body.classList.add('overflow-auto');
+
         fetchGitHubRepos('TriLea').then((data) => {
             setRepos(data);
         });
+
+        // This function will be called when the component unmounts
+        return () => {
+            document.body.classList.remove('overflow-auto');
+        };
     }, []);
 
     return (
