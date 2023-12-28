@@ -1,13 +1,14 @@
-# tlea.dev
-# myPortfolio
+## A previous portfolio project that didn't turn out the way I wanted but I learned a lot from
 
-check out here at: https://trilea.github.io/tlea.dev/
-
-or tlea.dev
+check out here at: [Link Text](https://trilea.github.io/tlea.dev/)
 
 ## things I practiced...
 
-react refs
-react hooks
-three.js
-orbit controls
+- Vite build tool
+- React deployment to GitHub Pages
+- Custom domain configuration for GitHub Pages
+- react refs
+- react hooks
+- three.js
+- orbit controls
+- three.js meshes
